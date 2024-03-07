@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 数据库连接配置 -->
+    <context id="MYSQLTables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/school"
+                        userId="root"
+                        password="5278792">
+        </jdbcConnection>
+
+        <!-- 实体类生成路径配置 -->
+        <javaModelGenerator targetPackage="com.example.model" targetProject="src/main/java">
+            <property name="enableSubPackages"  value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- Mapper 接口生成路径配置 -->
+        <sqlMapGenerator targetPackage="com.example.mapper"  targetProject="src/main/resources">
+            <property name="enableSubPackages"  value="false"/>
+        </sqlMapGenerator>
+
+        <!-- Mapper XML 文件生成路径配置 -->
+        <javaClientGenerator targetPackage="com.example.mapper"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages"  value="false"/>
+        </javaClientGenerator>
+
+        <!-- 数据表及实体类对应关系配置 -->
+        <table schema="school" tableName="student" domainObjectName=""
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>
+    </context>
+</generatorConfiguration>

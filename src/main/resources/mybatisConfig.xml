@@ -1,0 +1,5 @@
+<configuration>
+    <typeAliases>
+        <package name="com.example.model"/> <!--替换成你的项目的实体类的路径-->
+    </typeAliases>
+</configuration>
